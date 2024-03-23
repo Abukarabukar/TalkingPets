@@ -1,0 +1,64 @@
+package io.zipcoder.polymorphism;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class DogTest {
+    @Test
+    public void testPetContructorNull(){
+        Pet pet = new Pet();
+
+        Assert.assertNotNull(pet);
+
+    }
+
+    @Test
+    public void testPetConstructorName(){
+        String name = "Dasi";
+        Pet pet = new Pet("Dasi");
+
+        Assert.assertEquals(name, pet.getName());
+    }
+
+    @Test
+    public void testPetConstructorAge(){
+        int age = 7;
+        Pet pet = new Pet(age);
+
+        Assert.assertEquals(age, pet.getAge());
+    }
+
+    @Test
+    public void testPetConstructorNameAndAge(){
+        String name = "Dasi";
+        int age = 7;
+        Pet pet = new Pet(name, age);
+
+        Assert.assertEquals(name, pet.getName());
+        Assert.assertEquals(age, pet.getAge());
+    }
+
+    @Test
+    public void testPetSpeak(){
+        String name = "Dasi";
+        int age = 7;
+        Pet pet = new Pet(name, age);
+
+        String expected = "Speeeeak";
+        String actual = pet.speak();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+
+    //Dog
+
+    @Test
+    public void testDogConstructor(){
+        Dog dog = new Dog();
+
+
+        String actual = dog.speak();
+        Assert.assertNotNull(dog);
+    }
+}
